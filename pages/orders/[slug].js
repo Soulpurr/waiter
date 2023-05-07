@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillFire } from "react-icons/ai";
 import { data } from "../../firebase.config";
 import { collection } from "firebase/firestore";
@@ -12,7 +12,11 @@ const Orders = () => {
   const get = async () => {
     const q = query(
       collection(data, "order"),
-      where("tableId", "==", router?.query?.slug?.toString())
+      where(
+        "tableId",
+        "==",
+        router.query.slug ? router?.query?.slug?.toString() : ""
+      )
     );
 
     const querySnapshot = await getDocs(q);
@@ -20,7 +24,10 @@ const Orders = () => {
     setorder(documentsData);
     console.log(order);
   };
-  get();
+  useEffect(() => {
+    get();
+  }, []);
+
   // Sample order data
   // const order = {
   //   orderId: "12345",

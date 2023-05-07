@@ -43,7 +43,7 @@ const ModifyOrders = () => {
     // const db = doc(data, "order"," router.query.slug?.slice(3)?.toString()");
     const q = query(
       dbInstance,
-      where("tableId", "==", router?.query?.slug?.slice(3)?.toString())
+      where("tableId", "==",  router.query.slug ?router?.query?.slug?.slice(3)?.toString():"")
     );
 
     const querySnapshot = await getDocs(q);

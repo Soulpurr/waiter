@@ -5,6 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,8 +20,7 @@ const firebaseConfig = {
   appId: "1:997390307289:web:4f91e603ed753b6e4653c8",
   measurementId: "G-KG2T48ST4L",
 };
-const firestore = admin.firestore();
-firestore.settings({ ignoreUndefinedProperties: true });
+
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const data = getFirestore(app);
