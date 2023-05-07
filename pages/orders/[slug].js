@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { AiFillFire } from "react-icons/ai";
-import { app, data } from "../../firebase.config";
-import { collection, doc, getDoc } from "firebase/firestore";
+import { data } from "../../firebase.config";
+import { collection } from "firebase/firestore";
 
 import { query, where, getDocs } from "firebase/firestore";
 import { useRouter } from "next/router";
-const dbInstance = collection(data, "order");
+// const dbInstance = collection(data, "order");
 const Orders = () => {
   const [order, setorder] = useState([]);
   const router = useRouter();

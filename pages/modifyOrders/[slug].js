@@ -1,15 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { app, data } from "../../firebase.config";
-import {
-  collection,
-  addDoc,
-  setDoc,
-  getDocs,
-  doc,
-  query,
-  where,
-} from "firebase/firestore";
+import { data } from "../../firebase.config";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { updateDoc } from "firebase/firestore";
 const dbInstance = collection(data, "order");
 const ModifyOrders = () => {
